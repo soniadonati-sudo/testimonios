@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonios</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+
+.tbr-wrap {
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  color: #302922;
+}
+
+.tbr-hero {
+  padding: 48px 0 36px;
+  text-align: left;
+}
+
+.tbr-hero-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #89504A;
+  margin-bottom: 14px;
+}
+
+.tbr-hero h1 {
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(28px, 4vw, 44px);
+  color: #302922;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  max-width: 580px;
+}
+
+.tbr-hero h1 em {
+  color: #580C0C;
+}
+
+.tbr-hero-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: #89504A;
+  max-width: 420px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.tbr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #580C0C;
+  border-radius: 50px;
+  padding: 9px 20px;
+  color: #F6F3EC;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.tbr-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #F6F3EC;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: tbr-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tbr-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.tbr-section {
+  padding: 32px 0 48px;
+}
+
+.tbr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.tbr-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 18px 16px;
+  border: 1px solid rgba(48,41,34,0.09);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease;
+}
+
+.tbr-card:hover {
+  transform: translateY(-2px);
+}
+
+.tbr-card.dark {
+  background: #302922;
+  border-color: rgba(246,243,236,0.07);
+}
+
+.tbr-card.mid {
+  background: #89504A;
+  border-color: rgba(246,243,236,0.1);
+}
+
+.tbr-qmark {
+  font-family: 'Noto Serif Display', serif;
+  font-size: 36px;
+  line-height: 0.6;
+  color: #89504A;
+  opacity: 0.35;
+  margin-bottom: -4px;
+}
+
+.tbr-card.dark .tbr-qmark { color: #F6F3EC; opacity: 0.18; }
+.tbr-card.mid  .tbr-qmark { color: #F6F3EC; opacity: 0.22; }
+
+.tbr-quote {
+  font-family: 'Noto Serif Display', serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #302922;
+  flex: 1;
+}
+
+.tbr-card.dark .tbr-quote { color: #F6F3EC; }
+.tbr-card.mid  .tbr-quote { color: #F6F3EC; }
+
+.tbr-stars {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #89504A;
+}
+
+.tbr-card.dark .tbr-stars { color: rgba(246,243,236,0.55); }
+.tbr-card.mid  .tbr-stars { color: rgba(246,243,236,0.65); }
+
+.tbr-footer-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tbr-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tbr-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #580C0C;
+}
+
+.tbr-card.dark .tbr-name { color: #F6F3EC; }
+.tbr-card.mid  .tbr-name { color: #F6F3EC; }
+
+.tbr-meta {
+  font-size: 10px;
+  font-weight: 300;
+  color: #89504A;
+  line-height: 1.4;
+}
+
+.tbr-card.dark .tbr-meta { color: rgba(246,243,236,0.5); }
+.tbr-card.mid  .tbr-meta { color: rgba(246,243,236,0.55); }
+
+.tbr-tag {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: #F6F3EC;
+  color: #580C0C;
+  border: 1px solid rgba(88,12,12,0.12);
+}
+
+.tbr-card.dark .tbr-tag {
+  background: rgba(246,243,236,0.1);
+  color: rgba(246,243,236,0.8);
+  border-color: rgba(246,243,236,0.14);
+}
+
+.tbr-card.mid .tbr-tag {
+  background: rgba(246,243,236,0.12);
+  color: rgba(246,243,236,0.85);
+  border-color: rgba(246,243,236,0.18);
+}
+
+.tbr-divider {
+  text-align: center;
+  padding: 28px 24px 24px;
+}
+
+.tbr-divider-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #89504A;
+  position: relative;
+  display: inline-block;
+}
+
+.tbr-divider-label::before,
+.tbr-divider-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 1px;
+  background: #89504A;
+  opacity: 0.35;
+}
+
+.tbr-divider-label::before { right: calc(100% + 16px); }
+.tbr-divider-label::after  { left:  calc(100% + 16px); }
+
+.tbr-foot {
+  background: #302922;
+  text-align: center;
+  padding: 52px 24px;
+}
+
+.tbr-foot strong {
+  display: block;
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 28px);
+  color: #F6F3EC;
+  margin-bottom: 10px;
+}
+
+.tbr-foot p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(246,243,236,0.5);
+}
+
+@media (max-width: 768px) {
+  .tbr-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .tbr-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="tbr-wrap">
+
+  <div class="tbr-hero">
+    <span class="tbr-hero-label">Lo que ellas dicen</span>
+    <h1>Lo que cambió desde que<br><em>La Biblia de los Retiros</em><br>llegó a sus manos</h1>
+    <p class="tbr-hero-sub">Facilitadoras reales. Resultados reales. Una comunidad que transforma.</p>
+    <div class="tbr-badge">
+      <span class="tbr-badge-dot"></span>
+      +40 facilitadoras activas en la comunidad privada de WhatsApp
+    </div>
+  </div>
+
+  <div class="tbr-section">
+    <div class="tbr-grid">
+
+      <div class="tbr-card dark">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Antes improvisaba todo. Armaba las jornadas con lo que encontraba suelto en internet y sentía que algo siempre faltaba. Ahora tengo una estructura que fluye, rituales que emocionan, y mis participantes preguntan cuándo es el próximo antes de que termine el actual.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Valentina R.</span>
+            <span class="tbr-meta">Argentina · Facilitadora de retiros femeninos</span>
+          </div>
+          <span class="tbr-tag">Estructura</span>
+        </div>
+      </div>
+
+      <div class="tbr-card">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">La Meditación de Enraizamiento la aplico al inicio de cada retiro y el resultado es siempre el mismo: el grupo baja su ritmo, suelta el mundo de afuera y entra de verdad al proceso. Un paso simple que cambia toda la energía del encuentro.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Florencia R.</span>
+            <span class="tbr-meta">Argentina · Maestra de yoga y meditación</span>
+          </div>
+          <span class="tbr-tag">Herramientas</span>
+        </div>
+      </div>
+
+      <div class="tbr-card mid">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">La Activación del Cuerpo Energético parece simple pero crea una apertura grupal impresionante. Lo apliqué antes de una sesión de shadow work y el grupo entró con una disposición completamente diferente. El cuerpo preparado facilita lo que la mente sola no puede.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Carla V.</span>
+            <span class="tbr-meta">Perú · Maestra de yoga y facilitadora</span>
+          </div>
+          <span class="tbr-tag">Cuerpo energético</span>
+        </div>
+      </div>
+
+      <div class="tbr-card">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Di mi primer retiro pagado con La Biblia en mano. Veinte mujeres, tres días en la montaña. Nunca me había sentido tan segura como facilitadora. Tener una estructura clara para cada momento me dio la confianza para dejar que la magia ocurriera.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Carolina V.</span>
+            <span class="tbr-meta">México · Facilitadora de retiros</span>
+          </div>
+          <span class="tbr-tag">Primer retiro</span>
+        </div>
+      </div>
+
+      <div class="tbr-card dark">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Antes mis retiros me dejaban agotada porque no sabía cómo cerrar los procesos. La estructura del Capítulo 4 me enseñó a integrar, a cerrar con ritual y a que cada persona se vaya sostenida. Cambió todo, para mis participantes y para mí.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Lucía A.</span>
+            <span class="tbr-meta">Argentina · Terapeuta holística y facilitadora</span>
+          </div>
+          <span class="tbr-tag">Transformación</span>
+        </div>
+      </div>
+
+      <div class="tbr-card">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">El Ritual de Renacimiento fue el cierre más poderoso que he facilitado. Que cada mujer dijera lo que deja y lo que elige... hubo abrazos, lágrimas, risas. El grupo me pidió organizar el próximo antes de que terminara ese mismo día.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Mariana S.</span>
+            <span class="tbr-meta">México · Facilitadora de retiros en la naturaleza</span>
+          </div>
+          <span class="tbr-tag">Rituales</span>
+        </div>
+      </div>
+
+      <div class="tbr-card mid">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Triplicé el precio de mis retiros después de aplicar lo que aprendí en La Biblia. Lo fui haciendo a medida que mis retiros se volvían más profundos y mis participantes regresaban y me referenciaban. La calidad de la experiencia justifica el valor, siempre.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Rocío M.</span>
+            <span class="tbr-meta">Argentina · Terapeuta holística</span>
+          </div>
+          <span class="tbr-tag">Resultados</span>
+        </div>
+      </div>
+
+      <div class="tbr-card">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Compré el ebook un domingo. El siguiente fin de semana ya estaba facilitando mi primer retiro con estructura completa. La Biblia es tan clara y aplicable que el tiempo entre leer y hacer es mínimo. No es teoría. Es acción directa.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Andrea M.</span>
+            <span class="tbr-meta">Perú · Facilitadora de retiros femeninos</span>
+          </div>
+          <span class="tbr-tag">Aplicabilidad</span>
+        </div>
+      </div>
+
+      <div class="tbr-card dark">
+        <div class="tbr-qmark">"</div>
+        <p class="tbr-quote">Un año después de comprar La Biblia de los Retiros, miro hacia atrás y veo una versión de mí que no reconozco. Mis retiros tienen alma, mis participantes vuelven. Pero lo más valioso es lo que cambió en cómo entiendo este trabajo sagrado.</p>
+        <div class="tbr-stars">★★★★★</div>
+        <div class="tbr-footer-row">
+          <div class="tbr-author">
+            <span class="tbr-name">Natalia F.</span>
+            <span class="tbr-meta">México · Terapeuta holística y facilitadora</span>
+          </div>
+          <span class="tbr-tag">Un año después</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tbr-divider">
+    <span class="tbr-divider-label">Únete a la comunidad</span>
+  </div>
+
+  <div class="tbr-foot">
+    <strong>La Biblia de los Retiros · Sonia Donati</strong>
+    <p>111 páginas de herramientas + comunidad privada de +40 facilitadoras</p>
+  </div>
+
+</div>
+
+</body>
+</html>
