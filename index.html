@@ -8,7 +8,7 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: transparent; font-family: 'Inter', sans-serif; color: #302922; }
-.wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 40px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 3.5px; text-transform: uppercase; color: #89504A; margin-bottom: 16px; padding-top: 40px; }
 .eyebrow::before { content: ''; width: 28px; height: 1px; background: #89504A; opacity: 0.5; }
 .testi-h { font-family: 'Noto Serif Display', serif; font-weight: 400; font-style: italic; font-size: clamp(24px, 4vw, 34px); color: #302922; line-height: 1.2; margin-bottom: 10px; }
@@ -40,14 +40,14 @@ body { background: transparent; font-family: 'Inter', sans-serif; color: #302922
 .tc-tag { font-size: 9px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; background: #F6F3EC; color: #580C0C; border: 1px solid rgba(88,12,12,0.1); white-space: nowrap; }
 .tc.dk .tc-tag { background: rgba(246,243,236,0.08); color: rgba(246,243,236,0.7); border-color: rgba(246,243,236,0.12); }
 .tc.md .tc-tag { background: rgba(246,243,236,0.1); color: rgba(246,243,236,0.8); border-color: rgba(246,243,236,0.15); }
-.final-div { text-align: center; padding: 32px 0 20px; }
+.final-div { text-align: center; padding: 32px 20px 20px; }
 .final-div span { font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: #89504A; position: relative; display: inline-block; }
 .final-div span::before, .final-div span::after { content: ''; position: absolute; top: 50%; width: 40px; height: 1px; background: #89504A; opacity: 0.3; }
 .final-div span::before { right: calc(100% + 14px); }
 .final-div span::after { left: calc(100% + 14px); }
-.final-foot { background: #302922; text-align: center; padding: 44px 24px; margin: 0 -20px; }
-.final-foot strong { display: block; font-family: 'Noto Serif Display', serif; font-weight: 400; font-style: italic; font-size: clamp(18px, 3vw, 24px); color: #F6F3EC; margin-bottom: 8px; }
-.final-foot p { font-size: 12px; font-weight: 300; color: rgba(246,243,236,0.4); }
+.final-foot { max-width: 680px; margin: 0 auto; text-align: center; padding: 32px 20px; border-top: 1px solid rgba(48,41,34,0.08); }
+.final-foot strong { display: block; font-family: 'Noto Serif Display', serif; font-weight: 400; font-style: italic; font-size: 18px; color: #302922; margin-bottom: 6px; }
+.final-foot p { font-size: 12px; font-weight: 300; color: #89504A; }
 </style>
 </head>
 <body>
@@ -123,10 +123,12 @@ body { background: transparent; font-family: 'Inter', sans-serif; color: #302922
 
   </div>
 </div>
+
 <div class="final-div"><span>Únete a la comunidad</span></div>
 <div class="final-foot">
   <strong>La Biblia de los Retiros · Sonia Donati</strong>
   <p>111 páginas de herramientas + comunidad privada de +40 facilitadoras</p>
 </div>
+
 </body>
 </html>
