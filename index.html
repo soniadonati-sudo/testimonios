@@ -402,7 +402,7 @@ body {
 /* ── TESTI GRID ── */
 .tgrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
@@ -540,10 +540,19 @@ body {
 .final-divider span::before { right: calc(100% + 14px); }
 .final-divider span::after  { left:  calc(100% + 14px); }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .tgrid { grid-template-columns: 1fr; }
   .quien-wrap { padding: 30px 22px; }
   .cta-wrap { padding: 28px 20px; }
+  .wrap { padding: 0 18px 60px; }
+  .hero-quote { font-size: 24px; }
+  .testi-h { font-size: 24px; }
+  .quien-name { font-size: 26px; }
+  .cta-main { font-size: 19px; }
+  .cta-pills { flex-direction: column; align-items: center; }
+  .inc-item { grid-template-columns: 18px 1fr; gap: 0 12px; }
+  .final { margin: 48px -18px 0; padding: 40px 18px; }
+  .quien-accent { gap: 6px; }
 }
 </style>
 </head>
@@ -795,5 +804,19 @@ body {
   <p class="final-sub">111 páginas de herramientas + comunidad privada de +40 facilitadoras</p>
 </div>
 
+<script>
+function notifyHeight() {
+  var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+  window.parent.postMessage({ iframeHeight: h }, '*');
+  document.documentElement.style.height = 'auto';
+  document.body.style.height = 'auto';
+}
+window.addEventListener('load', function() {
+  setTimeout(notifyHeight, 300);
+  setTimeout(notifyHeight, 800);
+  setTimeout(notifyHeight, 1500);
+});
+window.addEventListener('resize', notifyHeight);
+</script>
 </body>
 </html>
